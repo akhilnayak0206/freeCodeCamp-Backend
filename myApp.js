@@ -31,11 +31,15 @@ app.use(express.static(staticPath))
 
 /** 5) serve JSON on a specific route */
 app.get('/json',(req,res,next)=>{
-  res.json({"message":"Hello json"})
+  res.json({"message":"Hello json"});
+  next();
 })
 
 /** 6) Use the .env file to configure the app */
- 
+ app.use((req,res,next)=>{
+     console.log(`${req.method} ${req.path} - ${req.ip}`);
+    //  next();
+ })
  
 /** 7) Root-level Middleware - A logger */
 //  place it before all the routes !
