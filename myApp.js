@@ -14,19 +14,20 @@ console.log("Hello World")
 
 
 /** 2) A first working Express Server */
-app.get('/home',(req,res,next)=>{
+app.get('/',(req,res,next)=>{
     res.send('Hello Express' )
 })
 
 
 /** 3) Serve an HTML file */
-absolutePath = __dirname + '/Dummy.html'
+let absolutePath = __dirname + '/views/index.html'  //this line edit to get the html file from views
 app.get('/home',(req,res,next)=>{
     res.sendFile(absolutePath )
 })
 
 /** 4) Serve static assets  */
-
+let staticPath = __dirname + '/public'
+app.use(express.static(staticPath))
 
 /** 5) serve JSON on a specific route */
 
