@@ -20,6 +20,10 @@ app.get('/home',(req,res,next)=>{
 
 
 /** 3) Serve an HTML file */
+absolutePath = __dirname + '/Dummy.html'
+app.get('/home',(req,res,next)=>{
+    res.sendFile(absolutePath )
+})
 
 /** 4) Serve static assets  */
 
