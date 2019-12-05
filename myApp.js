@@ -30,7 +30,9 @@ let staticPath = __dirname + '/public'
 app.use(express.static(staticPath))
 
 /** 5) serve JSON on a specific route */
-
+app.get('/json',(req,res,next)=>{
+  res.json({"message":"Hello json"})
+})
 
 /** 6) Use the .env file to configure the app */
  
