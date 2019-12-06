@@ -88,16 +88,10 @@ app.get('/:word/word', (req,res,next)=>{
 // /name?first=<firstname>&last=<lastname>
 
 
-
-// --- Edited by Akhil Nayak 0206 ---
-// Added require body parser and then .urlencoded extended: false
-
-
-
-
-
 /** 11) Get ready for POST Requests - the `body-parser` */
 // place it before all the routes !
+
+// Added require body parser and then .urlencoded extended: false --- Edited by Akhil Nayak 0206 ---
 
 /** 12) Get data form POST  */
 
