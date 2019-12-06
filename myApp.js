@@ -93,19 +93,23 @@ app.get("/:word/word", (req, res, next) => {
 
 app
   .route("/name")
-  .get((req,res,next)=>{
-    var { first, last } = req.query
-    res.json({"name":`${first} ${last}`})
+  .get((req, res, next) => {
+    var { first, last } = req.query;
+    res.json({ name: `${first} ${last}` });
   })
-  .post(); //--- Edited by Akhil Nayak 0206 --- Added post to make a cleaner code for further challenges as said by FCC in challenge
+  //.post(); //--- Edited by Akhil Nayak 0206 --- Added post to make a cleaner code for further challenges as said by FCC in challenge
+  //Will use .post() in 12th
 
-/** 11) Get ready for POST Requests - the `body-parser` */
-// place it before all the routes !
+  /** 11) Get ready for POST Requests - the `body-parser` */
+  // place it before all the routes !
 
-// Added require body parser and then .urlencoded extended: false --- Edited by Akhil Nayak 0206 ---
+  // Added require body parser and then .urlencoded extended: false --- Edited by Akhil Nayak 0206 ---
 
-/** 12) Get data form POST  */
-
+  /** 12) Get data form POST  */
+  .post((req, res, next) => {
+    var { first, last } = req.body;
+    res.json({ name: `${first} ${last}` });
+  });
 // This would be part of the basic setup of an Express app
 // but to allow FCC to run tests, the server is already active
 /** app.listen(process.env.PORT || 3000 ); */
